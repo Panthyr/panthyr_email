@@ -30,9 +30,6 @@ requires = ['setuptools', 'setuptools-scm']
 where = ['src']             # list of folders that contain the packages (['.'] by default)
 include = ['panthyr_email']
 
-# [project.scripts]
-# manage_mro_modem_modes = "XXX.XXX:YYY"
-
 [tool.bandit]
 exclude_dirs = ["tests"]
 # tests = ["B201", "B301"]
