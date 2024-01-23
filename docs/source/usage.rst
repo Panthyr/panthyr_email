@@ -12,6 +12,7 @@ Example code:
         server='server',
         username='username',
         password='password',
+        port=587
     )
     mail.create_email(
         to='to_email',

@@ -45,7 +45,7 @@ class pEmail:
         """pEmail object constructor.
 
         Args:
-            server (str): server and port in format xxxx.xxxx.xxxx:yyy where yyy is the port.
+            server (str): server address.
             username (str): username for login
             password (str): password for login
             sender (Union[str, None]): sender email adress. If None, username is used as sender
@@ -80,6 +80,9 @@ class pEmail:
         self._msg['From'] = self._sender
         self._msg['To'] = to
         self._msg['Subject'] = f'[PANTHYR {station_id}] {subject}'
+        self._msg.attach(MIMEText(text, 'plain'))
+
+    def add_text(self, text: str) -> None:
         self._msg.attach(MIMEText(text, 'plain'))
 
     def add_attachment(self, fn: Union[pathlib.Path, str]) -> None:
